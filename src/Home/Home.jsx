@@ -16,6 +16,7 @@ import service2 from '../../assets/service2.jpg';
 import service3 from '../../assets/service3.jpg';
 import service4 from '../../assets/service4.jpg';
 import Link from 'next/link';
+import Slider from '../Slider/Slider';
 
 const HomeScreen = () => {
 
@@ -205,23 +206,53 @@ const pricingData = [
     { value: "Water Tank Cleaning", label: "Water Tank Cleaning" },
   ];
 
+  const slides = [
+    {
+      title: 'Cleaning Excellence Guaranteed',
+      description: 'Ensuring the highest standard of cleanliness with swift, reliable service.',
+      image:service1,
+    },
+    {
+      title: 'Grease Trap Supply & Installation',
+      description: 'Professional supply and installation of high-quality grease traps.',
+      image: service2,
+    },
+    {
+      title: 'Lift Station Cleaning',
+      description: 'Thorough and efficient cleaning for lift stations to ensure optimal performance.',
+      image: service3,
+    },
+    {
+      title: 'Sewage Water Removing',
+      description: 'Fast and safe removal of sewage water to maintain a healthy environment.',
+      image: service4,
+    },
+    {
+      title: 'Industrial Cleaning Services',
+      description: 'Comprehensive industrial cleaning solutions for a range of industries.',
+      image: service1,
+    },
+    {
+      title: 'Sump Pit Cleaning',
+      description: 'Expert sump pit cleaning services to prevent flooding and ensure safety.',
+      image: service2,
+    },
+    {
+      title: 'Drain Line Jetting',
+      description: 'High-pressure drain line jetting to remove blockages and maintain flow.',
+      image: service3,
+    },
+  ];
+  
+
+
   return (
     <div>
       <Navbar />
       <div className="home-container">
-        <div className="slide1">
-          <div className="slide1left">
-            <div className="sub-head"><span>Fast and</span> efficient service</div>
-            <div className="main-head">
-              <div className="main-head-s1">Cleaning</div>
-              <div className="main-head-s2">Excellence</div>
-              <div className="main-head-s3">Guaranteed!</div>
-            </div>
-            <button className="learn-more-btn" ><Link href="/Services" style={{textDecoration:"none"}} >Learn More</Link></button>
-          </div>
-          <div className="slide1right">
-            <Image className='slide1RightImg' src={rightImage} alt="Image not found" layout="responsive" />
-          </div>
+        <div>
+
+        <Slider slides={slides} />
         </div>
 
         <div className="online-appointment">
