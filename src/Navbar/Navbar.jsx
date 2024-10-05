@@ -79,11 +79,11 @@ const Navbar = ({ text1, text2, path1, path2 }) => {
                     </div>
                     <ul className={styles.navLinks}>
                         <li><Link href="/"><FaHome className={styles.icon} /> Home</Link></li>
-                        <li><Link href="/About"><FaInfoCircle className={styles.icon} /> About</Link></li>
-                        <li><Link href="/Services"><FaConciergeBell className={styles.icon} /> Services</Link></li>
-                        <li><Link href="/Pricing"><FaDollarSign className={styles.icon} /> Pricing</Link></li>
-                        <li><Link href="/Appointment"><FaCalendarAlt className={styles.icon} /> Appointment</Link></li>
-                        <li><Link href="/Contact"><FaPhone className={styles.icon} /> Contact</Link></li>
+                        <li><Link href="/About.html"><FaInfoCircle className={styles.icon} /> About</Link></li>
+                        <li><Link href="/Services.html"><FaConciergeBell className={styles.icon} /> Services</Link></li>
+                        <li><Link href="/Pricing.html"><FaDollarSign className={styles.icon} /> Pricing</Link></li>
+                        <li><Link href="/Appointment.html"><FaCalendarAlt className={styles.icon} /> Appointment</Link></li>
+                        <li><Link href="/Contact.html"><FaPhone className={styles.icon} /> Contact</Link></li>
                     </ul>
                     {isSticky && (
                         <div className={styles.quoteBtn}>
@@ -119,35 +119,35 @@ const Navbar = ({ text1, text2, path1, path2 }) => {
 
     <div className={styles.menuItem}>
         <span>
-            <Link href="/About" className={styles.link} onClick={openMenu} >About</Link> {/* Added className */}
+            <Link href="/About.html" className={styles.link} onClick={openMenu} >About</Link> {/* Added className */}
         </span>
         <span className={styles.icon}>+</span>
     </div>
 
     <div className={styles.menuItem}>
         <span>
-            <Link href="/Services" className={styles.link} onClick={openMenu} >Services</Link> {/* Added className */}
+            <Link href="/Services.html" className={styles.link} onClick={openMenu} >Services</Link> {/* Added className */}
         </span>
         <span className={styles.icon}>+</span>
     </div>
 
     <div className={styles.menuItem}>
         <span>
-            <Link href="/Pricing" className={styles.link} onClick={openMenu} >Pricing</Link> {/* Added className */}
+            <Link href="/Pricing.html" className={styles.link} onClick={openMenu} >Pricing</Link> {/* Added className */}
         </span>
         <span className={styles.icon}>+</span>
     </div>
 
     <div className={styles.menuItem}>
         <span>
-            <Link href="/Appointment" className={styles.link} onClick={openMenu} >Appointment</Link> {/* Added className */}
+            <Link href="/Appointment.html" className={styles.link} onClick={openMenu} >Appointment</Link> {/* Added className */}
         </span>
         <span className={styles.icon}>+</span>
     </div>
 
     <div className={styles.menuItem}>
         <span>
-            <Link href="/Contact" className={styles.link} onClick={openMenu} >Contact</Link> {/* Added className */}
+            <Link href="/Contact.html" className={styles.link} onClick={openMenu} >Contact</Link> {/* Added className */}
         </span>
         <span className={styles.icon}>+</span>
     </div>

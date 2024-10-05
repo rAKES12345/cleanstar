@@ -35,7 +35,7 @@ const Slider = ({ slides }) => {
         <div className={styles.content}>
           <div className={styles.description}>{formatDescription(slides[currentIndex].description)}</div>
           <div className={styles.heading}>{slides[currentIndex].title}</div>
-          <Link href="/Services" className={styles.learnMoreButton} >Learn More</Link>
+          <Link href="/Services.html" className={styles.learnMoreButton} >Learn More</Link>
         </div>
 
         {/* Right side: Image */}

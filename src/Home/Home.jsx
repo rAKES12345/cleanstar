@@ -8,7 +8,7 @@ import aboutImage from '../../assets/about1.jpg';
 import brand1 from '../../assets/brand1.png';
 import brand2 from '../../assets/brand2.png';
 import { FaHome, FaBuilding, FaIndustry, FaHammer,FaWrench } from 'react-icons/fa'; // Importing icons
-import React ,{useState} from 'react';
+import React ,{useState,useEffect} from 'react';
 import testimonial from '../../assets/testimonial.jpg';
 import feedback1 from '../../assets/feedback1.jpg';
 import service1 from '../../assets/service1.jpg';
@@ -16,7 +16,6 @@ import service2 from '../../assets/service2.jpg';
 import service3 from '../../assets/service3.jpg';
 import service4 from '../../assets/service4.jpg';
 import Link from 'next/link';
-import Slider from '../Slider/Slider';
 
 const HomeScreen = () => {
 
@@ -460,6 +459,63 @@ const pricingData = [
 };
 
 export default HomeScreen;
+
+
+
+const Slider = ({ slides }) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  // Auto-slide every 1.5 seconds (1500 milliseconds)
+  useEffect(() => {
+    const autoSlide = setInterval(() => {
+      setCurrentIndex((prevIndex) =>
+        prevIndex === slides.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 1500);
+
+    // Clear interval on component unmount to avoid memory leaks
+    return () => clearInterval(autoSlide);
+  }, [slides.length]);
+
+  // Add background color to the first word of the description
+  const formatDescription = (description) => {
+    const words = description.split(' ');
+    return (
+      <span>
+        <span className="highlight">{words[0]}</span> {words.slice(1).join(' ')}
+      </span>
+    );
+  };
+
+  return (
+    <div className="slider">
+    <div className="slideContent">
+      {/* Left side: Content */}
+      <div className="content">
+        <div className="description">{formatDescription(slides[currentIndex].description)}</div>
+        <div className="heading">{slides[currentIndex].title}</div>
+        <Link href="/Services.html" className="learnMoreButton">Learn More</Link>
+      </div>
+
+      {/* Right side: Image */}
+      <div className="imageContainer">
+        <Image
+          src={slides[currentIndex].image}
+          alt="slider"
+          className="sliderImage"
+          width={600}
+          height={400}
+          objectFit="cover"
+          priority
+        />
+      </div>
+    </div>
+  </div>
+
+  );
+};
+
+
 
 const CardItem = ({ icon, cardHead, cardDescription }) => {
   return (
